@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require 'Beverage.php';
 /* EXERCISE 1
 Create a class beverage.
 Create the properties color (string), price (float) and temperature (string) and also foresee a construct.
@@ -32,53 +33,16 @@ Try to get this error on the screen= Fatal error: Uncaught Error: Call to undefi
 USE TYPEHINTING EVERYWHERE!
 */
 
-class Beverages
-{
-    public $color, $price, $temperature;
-
-    public function __construct(string $color, float $price, string $temperature = 'cold')
-    {
-        $this->color          = $color;
-        $this->price          = $price;
-        $this->temperature    = $temperature;
-    }
-
-    function getInfo()
-    {
-        echo '"This beverage is ' . $this->temperature . ' and ' . $this->color . '"';
-        echo '<br>';
-    }
-}
 
 $cola = new Beverages('black', 2);
 
 $cola->getInfo();
-
-$cola->getAlcoholpercentage();
-
-class Beer extends Beverages
-{
-    var $name;
-    var $alcoholpercentage;
-
-    public function __construct($color, $price, $name, $alcoholpercentage)
-    {
-        parent::__construct($color, $price);
-        $this->name                 = $name;
-        $this->alcoholpercentage    = $alcoholpercentage;
-    }
-
-    public function getAlcoholpercentage()
-    {
-        echo $this->alcoholpercentage . "%";
-        echo '<br>';
-        echo number_format($this->alcoholpercentage, 2) . "%";
-        echo '<br>';
-    }
-}
 
 $Duvel = new Beer('blond', 3.5, 'Duvel', 8.5);
 
 $Duvel->getAlcoholpercentage();
 
 $Duvel->getInfo();
+
+
+$cola->getAlcoholpercentage();
