@@ -1,7 +1,5 @@
 <?php
 
-require 'Beer.php';
-
 class Beverages
 {
     public $color, $price, $temperature;
@@ -19,3 +17,5 @@ class Beverages
         echo '<br>';
     }
 }
+
+require 'Beer.php';
